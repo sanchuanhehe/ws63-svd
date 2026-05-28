@@ -3834,11 +3834,22 @@
           <resetValue>0x00000000</resetValue>
           <fields>
             <field>
-              <name>pwm_en_0</name>
+              <name>pwm_en_2</name>
               <description>PWM0 enable: 0=off; 1=on</description>
               <bitRange>[0:0]</bitRange>
               <access>read-write</access>
-              <enumeratedValues />
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Off</name>
+                  <description>PWM disabled, output low</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>On</name>
+                  <description>PWM enabled</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
           </fields>
         </register>
@@ -3849,11 +3860,22 @@
           <resetValue>0x00000000</resetValue>
           <fields>
             <field>
-              <name>pwm_poarity_0</name>
+              <name>pwm_poarity_2</name>
               <description>PWM0 polarity: 0=normal; 1=inverted</description>
               <bitRange>[0:0]</bitRange>
               <access>read-write</access>
-              <enumeratedValues />
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Normal</name>
+                  <description>Normal polarity</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Inverted</name>
+                  <description>Inverted polarity</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
           </fields>
         </register>
@@ -3864,7 +3886,7 @@
           <resetValue>0x00000000</resetValue>
           <fields>
             <field>
-              <name>pwm_oen_cfg_0</name>
+              <name>pwm_oen_cfg_2</name>
               <description>PWM0 high-Z enable: 0=follow polarity; 1=high-Z when inactive</description>
               <bitRange>[0:0]</bitRange>
               <access>read-write</access>
@@ -3878,7 +3900,7 @@
           <resetValue>0x00000000</resetValue>
           <fields>
             <field>
-              <name>pwm_offset_l_0</name>
+              <name>pwm_offset_l_2</name>
               <description>PWM0 phase offset low 16 bits</description>
               <bitRange>[15:0]</bitRange>
               <access>read-write</access>
@@ -3892,7 +3914,7 @@
           <resetValue>0x00000000</resetValue>
           <fields>
             <field>
-              <name>pwm_offset_h_0</name>
+              <name>pwm_offset_h_2</name>
               <description>PWM0 phase offset high 16 bits</description>
               <bitRange>[15:0]</bitRange>
               <access>read-write</access>
@@ -3906,7 +3928,7 @@
           <resetValue>0x00000000</resetValue>
           <fields>
             <field>
-              <name>pwm_freq_l_0</name>
+              <name>pwm_freq_l_2</name>
               <description>PWM0 clock divider low 16 bits</description>
               <bitRange>[15:0]</bitRange>
               <access>read-write</access>
@@ -3920,7 +3942,7 @@
           <resetValue>0x00000000</resetValue>
           <fields>
             <field>
-              <name>pwm_freq_h_0</name>
+              <name>pwm_freq_h_2</name>
               <description>PWM0 clock divider high 16 bits</description>
               <bitRange>[15:0]</bitRange>
               <access>read-write</access>
@@ -3934,7 +3956,7 @@
           <resetValue>0x00000000</resetValue>
           <fields>
             <field>
-              <name>pwm_duty_l_0</name>
+              <name>pwm_duty_l_2</name>
               <description>PWM0 duty cycle low 16 bits</description>
               <bitRange>[15:0]</bitRange>
               <access>read-write</access>
@@ -3948,7 +3970,7 @@
           <resetValue>0x00000000</resetValue>
           <fields>
             <field>
-              <name>pwm_duty_h_0</name>
+              <name>pwm_duty_h_2</name>
               <description>PWM0 duty cycle high 16 bits</description>
               <bitRange>[15:0]</bitRange>
               <access>read-write</access>
@@ -3962,7 +3984,7 @@
           <resetValue>0x00000000</resetValue>
           <fields>
             <field>
-              <name>pwm_periodload_flag_0</name>
+              <name>pwm_periodload_flag_2</name>
               <description>Period load complete flag</description>
               <bitRange>[0:0]</bitRange>
               <access>read-only</access>
@@ -3976,7 +3998,7 @@
           <resetValue>0x00000000</resetValue>
           <fields>
             <field>
-              <name>pwm_period_val_0</name>
+              <name>pwm_period_val_2</name>
               <description>Pulse count for stepping mode</description>
               <bitRange>[15:0]</bitRange>
               <access>read-write</access>
@@ -3990,7 +4012,7 @@
           <resetValue>0x00000000</resetValue>
           <fields>
             <field>
-              <name>pwm_periodcnt_0</name>
+              <name>pwm_periodcnt_2</name>
               <description>Current pulse count</description>
               <bitRange>[15:0]</bitRange>
               <access>read-only</access>
@@ -4004,11 +4026,22 @@
           <resetValue>0x00000000</resetValue>
           <fields>
             <field>
-              <name>pwm_en_0</name>
+              <name>pwm_en_3</name>
               <description>PWM0 enable: 0=off; 1=on</description>
               <bitRange>[0:0]</bitRange>
               <access>read-write</access>
-              <enumeratedValues />
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Off</name>
+                  <description>PWM disabled, output low</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>On</name>
+                  <description>PWM enabled</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
           </fields>
         </register>
@@ -4019,11 +4052,22 @@
           <resetValue>0x00000000</resetValue>
           <fields>
             <field>
-              <name>pwm_poarity_0</name>
+              <name>pwm_poarity_3</name>
               <description>PWM0 polarity: 0=normal; 1=inverted</description>
               <bitRange>[0:0]</bitRange>
               <access>read-write</access>
-              <enumeratedValues />
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Normal</name>
+                  <description>Normal polarity</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Inverted</name>
+                  <description>Inverted polarity</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
           </fields>
         </register>
@@ -4034,7 +4078,7 @@
           <resetValue>0x00000000</resetValue>
           <fields>
             <field>
-              <name>pwm_oen_cfg_0</name>
+              <name>pwm_oen_cfg_3</name>
               <description>PWM0 high-Z enable: 0=follow polarity; 1=high-Z when inactive</description>
               <bitRange>[0:0]</bitRange>
               <access>read-write</access>
@@ -4048,7 +4092,7 @@
           <resetValue>0x00000000</resetValue>
           <fields>
             <field>
-              <name>pwm_offset_l_0</name>
+              <name>pwm_offset_l_3</name>
               <description>PWM0 phase offset low 16 bits</description>
               <bitRange>[15:0]</bitRange>
               <access>read-write</access>
@@ -4062,7 +4106,7 @@
           <resetValue>0x00000000</resetValue>
           <fields>
             <field>
-              <name>pwm_offset_h_0</name>
+              <name>pwm_offset_h_3</name>
               <description>PWM0 phase offset high 16 bits</description>
               <bitRange>[15:0]</bitRange>
               <access>read-write</access>
@@ -4076,7 +4120,7 @@
           <resetValue>0x00000000</resetValue>
           <fields>
             <field>
-              <name>pwm_freq_l_0</name>
+              <name>pwm_freq_l_3</name>
               <description>PWM0 clock divider low 16 bits</description>
               <bitRange>[15:0]</bitRange>
               <access>read-write</access>
@@ -4090,7 +4134,7 @@
           <resetValue>0x00000000</resetValue>
           <fields>
             <field>
-              <name>pwm_freq_h_0</name>
+              <name>pwm_freq_h_3</name>
               <description>PWM0 clock divider high 16 bits</description>
               <bitRange>[15:0]</bitRange>
               <access>read-write</access>
@@ -4104,7 +4148,7 @@
           <resetValue>0x00000000</resetValue>
           <fields>
             <field>
-              <name>pwm_duty_l_0</name>
+              <name>pwm_duty_l_3</name>
               <description>PWM0 duty cycle low 16 bits</description>
               <bitRange>[15:0]</bitRange>
               <access>read-write</access>
@@ -4118,7 +4162,7 @@
           <resetValue>0x00000000</resetValue>
           <fields>
             <field>
-              <name>pwm_duty_h_0</name>
+              <name>pwm_duty_h_3</name>
               <description>PWM0 duty cycle high 16 bits</description>
               <bitRange>[15:0]</bitRange>
               <access>read-write</access>
@@ -4132,7 +4176,7 @@
           <resetValue>0x00000000</resetValue>
           <fields>
             <field>
-              <name>pwm_periodload_flag_0</name>
+              <name>pwm_periodload_flag_3</name>
               <description>Period load complete flag</description>
               <bitRange>[0:0]</bitRange>
               <access>read-only</access>
@@ -4146,7 +4190,7 @@
           <resetValue>0x00000000</resetValue>
           <fields>
             <field>
-              <name>pwm_period_val_0</name>
+              <name>pwm_period_val_3</name>
               <description>Pulse count for stepping mode</description>
               <bitRange>[15:0]</bitRange>
               <access>read-write</access>
@@ -4160,7 +4204,7 @@
           <resetValue>0x00000000</resetValue>
           <fields>
             <field>
-              <name>pwm_periodcnt_0</name>
+              <name>pwm_periodcnt_3</name>
               <description>Current pulse count</description>
               <bitRange>[15:0]</bitRange>
               <access>read-only</access>
@@ -4174,11 +4218,22 @@
           <resetValue>0x00000000</resetValue>
           <fields>
             <field>
-              <name>pwm_en_0</name>
+              <name>pwm_en_4</name>
               <description>PWM0 enable: 0=off; 1=on</description>
               <bitRange>[0:0]</bitRange>
               <access>read-write</access>
-              <enumeratedValues />
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Off</name>
+                  <description>PWM disabled, output low</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>On</name>
+                  <description>PWM enabled</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
           </fields>
         </register>
@@ -4189,11 +4244,22 @@
           <resetValue>0x00000000</resetValue>
           <fields>
             <field>
-              <name>pwm_poarity_0</name>
+              <name>pwm_poarity_4</name>
               <description>PWM0 polarity: 0=normal; 1=inverted</description>
               <bitRange>[0:0]</bitRange>
               <access>read-write</access>
-              <enumeratedValues />
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Normal</name>
+                  <description>Normal polarity</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Inverted</name>
+                  <description>Inverted polarity</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
           </fields>
         </register>
@@ -4204,7 +4270,7 @@
           <resetValue>0x00000000</resetValue>
           <fields>
             <field>
-              <name>pwm_oen_cfg_0</name>
+              <name>pwm_oen_cfg_4</name>
               <description>PWM0 high-Z enable: 0=follow polarity; 1=high-Z when inactive</description>
               <bitRange>[0:0]</bitRange>
               <access>read-write</access>
@@ -4218,7 +4284,7 @@
           <resetValue>0x00000000</resetValue>
           <fields>
             <field>
-              <name>pwm_offset_l_0</name>
+              <name>pwm_offset_l_4</name>
               <description>PWM0 phase offset low 16 bits</description>
               <bitRange>[15:0]</bitRange>
               <access>read-write</access>
@@ -4232,7 +4298,7 @@
           <resetValue>0x00000000</resetValue>
           <fields>
             <field>
-              <name>pwm_offset_h_0</name>
+              <name>pwm_offset_h_4</name>
               <description>PWM0 phase offset high 16 bits</description>
               <bitRange>[15:0]</bitRange>
               <access>read-write</access>
@@ -4246,7 +4312,7 @@
           <resetValue>0x00000000</resetValue>
           <fields>
             <field>
-              <name>pwm_freq_l_0</name>
+              <name>pwm_freq_l_4</name>
               <description>PWM0 clock divider low 16 bits</description>
               <bitRange>[15:0]</bitRange>
               <access>read-write</access>
@@ -4260,7 +4326,7 @@
           <resetValue>0x00000000</resetValue>
           <fields>
             <field>
-              <name>pwm_freq_h_0</name>
+              <name>pwm_freq_h_4</name>
               <description>PWM0 clock divider high 16 bits</description>
               <bitRange>[15:0]</bitRange>
               <access>read-write</access>
@@ -4274,7 +4340,7 @@
           <resetValue>0x00000000</resetValue>
           <fields>
             <field>
-              <name>pwm_duty_l_0</name>
+              <name>pwm_duty_l_4</name>
               <description>PWM0 duty cycle low 16 bits</description>
               <bitRange>[15:0]</bitRange>
               <access>read-write</access>
@@ -4288,7 +4354,7 @@
           <resetValue>0x00000000</resetValue>
           <fields>
             <field>
-              <name>pwm_duty_h_0</name>
+              <name>pwm_duty_h_4</name>
               <description>PWM0 duty cycle high 16 bits</description>
               <bitRange>[15:0]</bitRange>
               <access>read-write</access>
@@ -4302,7 +4368,7 @@
           <resetValue>0x00000000</resetValue>
           <fields>
             <field>
-              <name>pwm_periodload_flag_0</name>
+              <name>pwm_periodload_flag_4</name>
               <description>Period load complete flag</description>
               <bitRange>[0:0]</bitRange>
               <access>read-only</access>
@@ -4316,7 +4382,7 @@
           <resetValue>0x00000000</resetValue>
           <fields>
             <field>
-              <name>pwm_period_val_0</name>
+              <name>pwm_period_val_4</name>
               <description>Pulse count for stepping mode</description>
               <bitRange>[15:0]</bitRange>
               <access>read-write</access>
@@ -4330,7 +4396,7 @@
           <resetValue>0x00000000</resetValue>
           <fields>
             <field>
-              <name>pwm_periodcnt_0</name>
+              <name>pwm_periodcnt_4</name>
               <description>Current pulse count</description>
               <bitRange>[15:0]</bitRange>
               <access>read-only</access>
@@ -4344,11 +4410,22 @@
           <resetValue>0x00000000</resetValue>
           <fields>
             <field>
-              <name>pwm_en_0</name>
+              <name>pwm_en_5</name>
               <description>PWM0 enable: 0=off; 1=on</description>
               <bitRange>[0:0]</bitRange>
               <access>read-write</access>
-              <enumeratedValues />
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Off</name>
+                  <description>PWM disabled, output low</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>On</name>
+                  <description>PWM enabled</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
           </fields>
         </register>
@@ -4359,11 +4436,22 @@
           <resetValue>0x00000000</resetValue>
           <fields>
             <field>
-              <name>pwm_poarity_0</name>
+              <name>pwm_poarity_5</name>
               <description>PWM0 polarity: 0=normal; 1=inverted</description>
               <bitRange>[0:0]</bitRange>
               <access>read-write</access>
-              <enumeratedValues />
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Normal</name>
+                  <description>Normal polarity</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Inverted</name>
+                  <description>Inverted polarity</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
           </fields>
         </register>
@@ -4374,7 +4462,7 @@
           <resetValue>0x00000000</resetValue>
           <fields>
             <field>
-              <name>pwm_oen_cfg_0</name>
+              <name>pwm_oen_cfg_5</name>
               <description>PWM0 high-Z enable: 0=follow polarity; 1=high-Z when inactive</description>
               <bitRange>[0:0]</bitRange>
               <access>read-write</access>
@@ -4388,7 +4476,7 @@
           <resetValue>0x00000000</resetValue>
           <fields>
             <field>
-              <name>pwm_offset_l_0</name>
+              <name>pwm_offset_l_5</name>
               <description>PWM0 phase offset low 16 bits</description>
               <bitRange>[15:0]</bitRange>
               <access>read-write</access>
@@ -4402,7 +4490,7 @@
           <resetValue>0x00000000</resetValue>
           <fields>
             <field>
-              <name>pwm_offset_h_0</name>
+              <name>pwm_offset_h_5</name>
               <description>PWM0 phase offset high 16 bits</description>
               <bitRange>[15:0]</bitRange>
               <access>read-write</access>
@@ -4416,7 +4504,7 @@
           <resetValue>0x00000000</resetValue>
           <fields>
             <field>
-              <name>pwm_freq_l_0</name>
+              <name>pwm_freq_l_5</name>
               <description>PWM0 clock divider low 16 bits</description>
               <bitRange>[15:0]</bitRange>
               <access>read-write</access>
@@ -4430,7 +4518,7 @@
           <resetValue>0x00000000</resetValue>
           <fields>
             <field>
-              <name>pwm_freq_h_0</name>
+              <name>pwm_freq_h_5</name>
               <description>PWM0 clock divider high 16 bits</description>
               <bitRange>[15:0]</bitRange>
               <access>read-write</access>
@@ -4444,7 +4532,7 @@
           <resetValue>0x00000000</resetValue>
           <fields>
             <field>
-              <name>pwm_duty_l_0</name>
+              <name>pwm_duty_l_5</name>
               <description>PWM0 duty cycle low 16 bits</description>
               <bitRange>[15:0]</bitRange>
               <access>read-write</access>
@@ -4458,7 +4546,7 @@
           <resetValue>0x00000000</resetValue>
           <fields>
             <field>
-              <name>pwm_duty_h_0</name>
+              <name>pwm_duty_h_5</name>
               <description>PWM0 duty cycle high 16 bits</description>
               <bitRange>[15:0]</bitRange>
               <access>read-write</access>
@@ -4472,7 +4560,7 @@
           <resetValue>0x00000000</resetValue>
           <fields>
             <field>
-              <name>pwm_periodload_flag_0</name>
+              <name>pwm_periodload_flag_5</name>
               <description>Period load complete flag</description>
               <bitRange>[0:0]</bitRange>
               <access>read-only</access>
@@ -4486,7 +4574,7 @@
           <resetValue>0x00000000</resetValue>
           <fields>
             <field>
-              <name>pwm_period_val_0</name>
+              <name>pwm_period_val_5</name>
               <description>Pulse count for stepping mode</description>
               <bitRange>[15:0]</bitRange>
               <access>read-write</access>
@@ -4500,7 +4588,7 @@
           <resetValue>0x00000000</resetValue>
           <fields>
             <field>
-              <name>pwm_periodcnt_0</name>
+              <name>pwm_periodcnt_5</name>
               <description>Current pulse count</description>
               <bitRange>[15:0]</bitRange>
               <access>read-only</access>
@@ -4514,11 +4602,22 @@
           <resetValue>0x00000000</resetValue>
           <fields>
             <field>
-              <name>pwm_en_0</name>
+              <name>pwm_en_6</name>
               <description>PWM0 enable: 0=off; 1=on</description>
               <bitRange>[0:0]</bitRange>
               <access>read-write</access>
-              <enumeratedValues />
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Off</name>
+                  <description>PWM disabled, output low</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>On</name>
+                  <description>PWM enabled</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
           </fields>
         </register>
@@ -4529,11 +4628,22 @@
           <resetValue>0x00000000</resetValue>
           <fields>
             <field>
-              <name>pwm_poarity_0</name>
+              <name>pwm_poarity_6</name>
               <description>PWM0 polarity: 0=normal; 1=inverted</description>
               <bitRange>[0:0]</bitRange>
               <access>read-write</access>
-              <enumeratedValues />
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Normal</name>
+                  <description>Normal polarity</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Inverted</name>
+                  <description>Inverted polarity</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
           </fields>
         </register>
@@ -4544,7 +4654,7 @@
           <resetValue>0x00000000</resetValue>
           <fields>
             <field>
-              <name>pwm_oen_cfg_0</name>
+              <name>pwm_oen_cfg_6</name>
               <description>PWM0 high-Z enable: 0=follow polarity; 1=high-Z when inactive</description>
               <bitRange>[0:0]</bitRange>
               <access>read-write</access>
@@ -4558,7 +4668,7 @@
           <resetValue>0x00000000</resetValue>
           <fields>
             <field>
-              <name>pwm_offset_l_0</name>
+              <name>pwm_offset_l_6</name>
               <description>PWM0 phase offset low 16 bits</description>
               <bitRange>[15:0]</bitRange>
               <access>read-write</access>
@@ -4572,7 +4682,7 @@
           <resetValue>0x00000000</resetValue>
           <fields>
             <field>
-              <name>pwm_offset_h_0</name>
+              <name>pwm_offset_h_6</name>
               <description>PWM0 phase offset high 16 bits</description>
               <bitRange>[15:0]</bitRange>
               <access>read-write</access>
@@ -4586,7 +4696,7 @@
           <resetValue>0x00000000</resetValue>
           <fields>
             <field>
-              <name>pwm_freq_l_0</name>
+              <name>pwm_freq_l_6</name>
               <description>PWM0 clock divider low 16 bits</description>
               <bitRange>[15:0]</bitRange>
               <access>read-write</access>
@@ -4600,7 +4710,7 @@
           <resetValue>0x00000000</resetValue>
           <fields>
             <field>
-              <name>pwm_freq_h_0</name>
+              <name>pwm_freq_h_6</name>
               <description>PWM0 clock divider high 16 bits</description>
               <bitRange>[15:0]</bitRange>
               <access>read-write</access>
@@ -4614,7 +4724,7 @@
           <resetValue>0x00000000</resetValue>
           <fields>
             <field>
-              <name>pwm_duty_l_0</name>
+              <name>pwm_duty_l_6</name>
               <description>PWM0 duty cycle low 16 bits</description>
               <bitRange>[15:0]</bitRange>
               <access>read-write</access>
@@ -4628,7 +4738,7 @@
           <resetValue>0x00000000</resetValue>
           <fields>
             <field>
-              <name>pwm_duty_h_0</name>
+              <name>pwm_duty_h_6</name>
               <description>PWM0 duty cycle high 16 bits</description>
               <bitRange>[15:0]</bitRange>
               <access>read-write</access>
@@ -4642,7 +4752,7 @@
           <resetValue>0x00000000</resetValue>
           <fields>
             <field>
-              <name>pwm_periodload_flag_0</name>
+              <name>pwm_periodload_flag_6</name>
               <description>Period load complete flag</description>
               <bitRange>[0:0]</bitRange>
               <access>read-only</access>
@@ -4656,7 +4766,7 @@
           <resetValue>0x00000000</resetValue>
           <fields>
             <field>
-              <name>pwm_period_val_0</name>
+              <name>pwm_period_val_6</name>
               <description>Pulse count for stepping mode</description>
               <bitRange>[15:0]</bitRange>
               <access>read-write</access>
@@ -4670,7 +4780,7 @@
           <resetValue>0x00000000</resetValue>
           <fields>
             <field>
-              <name>pwm_periodcnt_0</name>
+              <name>pwm_periodcnt_6</name>
               <description>Current pulse count</description>
               <bitRange>[15:0]</bitRange>
               <access>read-only</access>
@@ -4684,11 +4794,22 @@
           <resetValue>0x00000000</resetValue>
           <fields>
             <field>
-              <name>pwm_en_0</name>
+              <name>pwm_en_7</name>
               <description>PWM0 enable: 0=off; 1=on</description>
               <bitRange>[0:0]</bitRange>
               <access>read-write</access>
-              <enumeratedValues />
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Off</name>
+                  <description>PWM disabled, output low</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>On</name>
+                  <description>PWM enabled</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
           </fields>
         </register>
@@ -4699,11 +4820,22 @@
           <resetValue>0x00000000</resetValue>
           <fields>
             <field>
-              <name>pwm_poarity_0</name>
+              <name>pwm_poarity_7</name>
               <description>PWM0 polarity: 0=normal; 1=inverted</description>
               <bitRange>[0:0]</bitRange>
               <access>read-write</access>
-              <enumeratedValues />
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Normal</name>
+                  <description>Normal polarity</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Inverted</name>
+                  <description>Inverted polarity</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
           </fields>
         </register>
@@ -4714,7 +4846,7 @@
           <resetValue>0x00000000</resetValue>
           <fields>
             <field>
-              <name>pwm_oen_cfg_0</name>
+              <name>pwm_oen_cfg_7</name>
               <description>PWM0 high-Z enable: 0=follow polarity; 1=high-Z when inactive</description>
               <bitRange>[0:0]</bitRange>
               <access>read-write</access>
@@ -4728,7 +4860,7 @@
           <resetValue>0x00000000</resetValue>
           <fields>
             <field>
-              <name>pwm_offset_l_0</name>
+              <name>pwm_offset_l_7</name>
               <description>PWM0 phase offset low 16 bits</description>
               <bitRange>[15:0]</bitRange>
               <access>read-write</access>
@@ -4742,7 +4874,7 @@
           <resetValue>0x00000000</resetValue>
           <fields>
             <field>
-              <name>pwm_offset_h_0</name>
+              <name>pwm_offset_h_7</name>
               <description>PWM0 phase offset high 16 bits</description>
               <bitRange>[15:0]</bitRange>
               <access>read-write</access>
@@ -4756,7 +4888,7 @@
           <resetValue>0x00000000</resetValue>
           <fields>
             <field>
-              <name>pwm_freq_l_0</name>
+              <name>pwm_freq_l_7</name>
               <description>PWM0 clock divider low 16 bits</description>
               <bitRange>[15:0]</bitRange>
               <access>read-write</access>
@@ -4770,7 +4902,7 @@
           <resetValue>0x00000000</resetValue>
           <fields>
             <field>
-              <name>pwm_freq_h_0</name>
+              <name>pwm_freq_h_7</name>
               <description>PWM0 clock divider high 16 bits</description>
               <bitRange>[15:0]</bitRange>
               <access>read-write</access>
@@ -4784,7 +4916,7 @@
           <resetValue>0x00000000</resetValue>
           <fields>
             <field>
-              <name>pwm_duty_l_0</name>
+              <name>pwm_duty_l_7</name>
               <description>PWM0 duty cycle low 16 bits</description>
               <bitRange>[15:0]</bitRange>
               <access>read-write</access>
@@ -4798,7 +4930,7 @@
           <resetValue>0x00000000</resetValue>
           <fields>
             <field>
-              <name>pwm_duty_h_0</name>
+              <name>pwm_duty_h_7</name>
               <description>PWM0 duty cycle high 16 bits</description>
               <bitRange>[15:0]</bitRange>
               <access>read-write</access>
@@ -4812,7 +4944,7 @@
           <resetValue>0x00000000</resetValue>
           <fields>
             <field>
-              <name>pwm_periodload_flag_0</name>
+              <name>pwm_periodload_flag_7</name>
               <description>Period load complete flag</description>
               <bitRange>[0:0]</bitRange>
               <access>read-only</access>
@@ -4826,7 +4958,7 @@
           <resetValue>0x00000000</resetValue>
           <fields>
             <field>
-              <name>pwm_period_val_0</name>
+              <name>pwm_period_val_7</name>
               <description>Pulse count for stepping mode</description>
               <bitRange>[15:0]</bitRange>
               <access>read-write</access>
@@ -4840,7 +4972,7 @@
           <resetValue>0x00000000</resetValue>
           <fields>
             <field>
-              <name>pwm_periodcnt_0</name>
+              <name>pwm_periodcnt_7</name>
               <description>Current pulse count</description>
               <bitRange>[15:0]</bitRange>
               <access>read-only</access>
