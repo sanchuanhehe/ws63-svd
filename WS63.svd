@@ -12,12 +12,16 @@
 
   <cpu>
     <name>custom_riscv</name>
+    <description>Custom RISC-V 32-bit processor, ISA: RV32IMFC_Zicsr (rv32i2p1_m2p0_f2p2_c2p0_zicsr2p0)</description>
     <revision>r0p0</revision>
     <endian>little</endian>
     <mpuPresent>true</mpuPresent>
-    <fpuPresent>false</fpuPresent>
+    <fpuPresent>true</fpuPresent>
+    <fpuDP>false</fpuDP>
     <nvicPrioBits>3</nvicPrioBits>
     <vendorSystickConfig>false</vendorSystickConfig>
+    <deviceNumInterrupts>64</deviceNumInterrupts>
+    <sauNumRegions>0</sauNumRegions>
   </cpu>
 
   <peripherals>
