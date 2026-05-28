@@ -1,40 +1,40 @@
 <?xml version='1.0' encoding='utf-8'?>
 <device xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" schemaVersion="1.3" xs:noNamespaceSchemaLocation="CMSIS-SVD.xsd">
   <name>WS63</name>
+  <version>1.0</version>
+  <description>HiSilicon WS63 Wi-Fi/BLE/SLE Combo SoC — ISA: rv32i2p1_m2p0_f2p2_c2p0_zicsr2p0 (RV32IMFC_Zicsr), 240MHz, 512KB ITCM, 288KB DTCM, 640KB shared SRAM</description>
   <licenseText>Register definitions derived from public ws63-guide documentation and fbb_ws63 HAL
     headers. See https://github.com/sanchuanhehe/ws63-guide and
     https://github.com/sanchuanhehe/ws63-svd</licenseText>
-  <version>1.0</version>
-  <description>HiSilicon WS63 Wi-Fi/BLE/SLE Combo SoC — proprietary RISC-V (RV32IMFC_Zicsr), 240MHz,
-    512KB ITCM, 288KB DTCM, 640KB shared SRAM</description>
+  <cpu>
+    <name>other</name>
+    <revision>r0p0</revision>
+    <endian>little</endian>
+    <mpuPresent>true</mpuPresent>
+    <fpuPresent>true</fpuPresent>
+    <fpuDP>false</fpuDP>
+    <dspPresent>false</dspPresent>
+    <nvicPrioBits>3</nvicPrioBits>
+    <vendorSystickConfig>false</vendorSystickConfig>
+  </cpu>
   <addressUnitBits>8</addressUnitBits>
   <width>32</width>
   <size>32</size>
   <access>read-write</access>
   <resetValue>0x0</resetValue>
   <resetMask>0xFFFFFFFF</resetMask>
-  <cpu>
-    <name>custom_riscv</name>
-    <description>Custom RISC-V 32-bit processor, ISA: RV32IMFC_Zicsr
-      (rv32i2p1_m2p0_f2p2_c2p0_zicsr2p0)</description>
-    <revision>r0p0</revision>
-    <endian>little</endian>
-    <mpuPresent>true</mpuPresent>
-    <fpuPresent>true</fpuPresent>
-    <fpuDP>false</fpuDP>
-    <nvicPrioBits>3</nvicPrioBits>
-    <vendorSystickConfig>false</vendorSystickConfig>
-    <deviceNumInterrupts>64</deviceNumInterrupts>
-    <sauNumRegions>0</sauNumRegions>
-  </cpu>
   <peripherals>
     <peripheral>
+      <name>SYS_CTL1</name>
+      <description>System Control 1 - Interrupt Controller</description>
+      <baseAddress>0x44000000</baseAddress>
+      <size>32</size>
+      <access>read-write</access>
       <addressBlock>
         <offset>0x0000</offset>
         <size>0x2000</size>
         <usage>registers</usage>
       </addressBlock>
-      <name>SYS_CTL1</name>
       <interrupt>
         <name>SLE_INT</name>
         <value>47</value>
@@ -75,10 +75,6 @@
         <name>TIMER_INT0</name>
         <value>26</value>
       </interrupt>
-      <description>System Control 1 - Interrupt Controller</description>
-      <baseAddress>0x44000000</baseAddress>
-      <size>32</size>
-      <access>read-write</access>
       <registers>
         <register>
           <name>NMI_INT</name>
@@ -238,16 +234,16 @@
       </registers>
     </peripheral>
     <peripheral>
-      <addressBlock>
-        <offset>0x0000</offset>
-        <size>0x1000</size>
-        <usage>registers</usage>
-      </addressBlock>
       <name>IO_CONFIG</name>
       <description>IO multiplexing and pad control</description>
       <baseAddress>0x4400D000</baseAddress>
       <size>32</size>
       <access>read-write</access>
+      <addressBlock>
+        <offset>0x0000</offset>
+        <size>0x1000</size>
+        <usage>registers</usage>
+      </addressBlock>
       <registers>
         <register>
           <name>GPIO_00_SEL</name>
@@ -1662,14 +1658,14 @@
       </registers>
     </peripheral>
     <peripheral>
+      <name>GPIO0</name>
+      <description>GPIO controller for GPIO[7:0]</description>
+      <baseAddress>0x44028000</baseAddress>
       <addressBlock>
         <offset>0x0000</offset>
         <size>0x1000</size>
         <usage>registers</usage>
       </addressBlock>
-      <name>GPIO0</name>
-      <description>GPIO controller for GPIO[7:0]</description>
-      <baseAddress>0x44028000</baseAddress>
       <interrupt>
         <name>GPIO_INT0</name>
         <value>33</value>
@@ -1908,43 +1904,43 @@
       </registers>
     </peripheral>
     <peripheral derivedFrom="GPIO0">
+      <name>GPIO1</name>
+      <description>GPIO controller for GPIO[15:8]</description>
+      <baseAddress>0x44029000</baseAddress>
       <addressBlock>
         <offset>0x0000</offset>
         <size>0x1000</size>
         <usage>registers</usage>
       </addressBlock>
-      <name>GPIO1</name>
-      <description>GPIO controller for GPIO[15:8]</description>
-      <baseAddress>0x44029000</baseAddress>
       <interrupt>
         <name>GPIO_INT1</name>
         <value>34</value>
       </interrupt>
     </peripheral>
     <peripheral derivedFrom="GPIO0">
+      <name>GPIO2</name>
+      <description>GPIO controller for GPIO[18:16] — only 3 bits used; bits [7:3] are reserved and
+        unused.</description>
+      <baseAddress>0x4402A000</baseAddress>
       <addressBlock>
         <offset>0x0000</offset>
         <size>0x1000</size>
         <usage>registers</usage>
       </addressBlock>
-      <name>GPIO2</name>
-      <description>GPIO controller for GPIO[18:16] — only 3 bits used; bits [7:3] are reserved and
-        unused.</description>
-      <baseAddress>0x4402A000</baseAddress>
       <interrupt>
         <name>GPIO_INT2</name>
         <value>35</value>
       </interrupt>
     </peripheral>
     <peripheral>
+      <name>UART0</name>
+      <description>UART0 - Universal Asynchronous Receiver/Transmitter</description>
+      <baseAddress>0x44010000</baseAddress>
       <addressBlock>
         <offset>0x0000</offset>
         <size>0x1000</size>
         <usage>registers</usage>
       </addressBlock>
-      <name>UART0</name>
-      <description>UART0 - Universal Asynchronous Receiver/Transmitter</description>
-      <baseAddress>0x44010000</baseAddress>
       <interrupt>
         <name>UART0_INT</name>
         <value>53</value>
@@ -2103,6 +2099,12 @@
           <addressOffset>0x0C</addressOffset>
           <size>16</size>
           <resetValue>0x0000</resetValue>
+          <writeConstraint>
+            <range>
+              <minimum>0</minimum>
+              <maximum>255</maximum>
+            </range>
+          </writeConstraint>
           <fields>
             <field>
               <name>div_h</name>
@@ -2111,10 +2113,6 @@
               <access>read-write</access>
             </field>
           </fields>
-          <writeConstraint>
-            <writeAsRead>false</writeAsRead>
-            <range>0:255</range>
-          </writeConstraint>
         </register>
         <register>
           <name>DIV_L</name>
@@ -2123,6 +2121,12 @@
           <addressOffset>0x10</addressOffset>
           <size>16</size>
           <resetValue>0x0000</resetValue>
+          <writeConstraint>
+            <range>
+              <minimum>0</minimum>
+              <maximum>255</maximum>
+            </range>
+          </writeConstraint>
           <fields>
             <field>
               <name>div_l</name>
@@ -2131,10 +2135,6 @@
               <access>read-write</access>
             </field>
           </fields>
-          <writeConstraint>
-            <writeAsRead>false</writeAsRead>
-            <range>0:255</range>
-          </writeConstraint>
         </register>
         <register>
           <name>DIV_FRA</name>
@@ -2690,42 +2690,42 @@
       </registers>
     </peripheral>
     <peripheral derivedFrom="UART0">
+      <name>UART1</name>
+      <description>UART1 with flow control support</description>
+      <baseAddress>0x44011000</baseAddress>
       <addressBlock>
         <offset>0x0000</offset>
         <size>0x1000</size>
         <usage>registers</usage>
       </addressBlock>
-      <name>UART1</name>
-      <description>UART1 with flow control support</description>
-      <baseAddress>0x44011000</baseAddress>
       <interrupt>
         <name>UART1_INT</name>
         <value>54</value>
       </interrupt>
     </peripheral>
     <peripheral derivedFrom="UART0">
+      <name>UART2</name>
+      <description>UART2 with flow control support</description>
+      <baseAddress>0x44012000</baseAddress>
       <addressBlock>
         <offset>0x0000</offset>
         <size>0x1000</size>
         <usage>registers</usage>
       </addressBlock>
-      <name>UART2</name>
-      <description>UART2 with flow control support</description>
-      <baseAddress>0x44012000</baseAddress>
       <interrupt>
         <name>UART2_INT</name>
         <value>55</value>
       </interrupt>
     </peripheral>
     <peripheral>
+      <name>I2C0</name>
+      <description>I2C0 master controller</description>
+      <baseAddress>0x44018000</baseAddress>
       <addressBlock>
         <offset>0x0000</offset>
         <size>0x0100</size>
         <usage>registers</usage>
       </addressBlock>
-      <name>I2C0</name>
-      <description>I2C0 master controller</description>
-      <baseAddress>0x44018000</baseAddress>
       <interrupt>
         <name>I2C0_INT</name>
         <value>31</value>
@@ -3170,32 +3170,32 @@
       </registers>
     </peripheral>
     <peripheral derivedFrom="I2C0">
+      <name>I2C1</name>
+      <description>I2C1 master controller</description>
+      <baseAddress>0x44018100</baseAddress>
       <addressBlock>
         <offset>0x0000</offset>
         <size>0x0100</size>
         <usage>registers</usage>
       </addressBlock>
-      <name>I2C1</name>
-      <description>I2C1 master controller</description>
-      <baseAddress>0x44018100</baseAddress>
       <interrupt>
         <name>I2C1_INT</name>
         <value>32</value>
       </interrupt>
     </peripheral>
     <peripheral>
+      <name>PWM</name>
+      <description>PWM controller with 8 channels</description>
+      <baseAddress>0x44024000</baseAddress>
       <addressBlock>
         <offset>0x0000</offset>
         <size>0x1000</size>
         <usage>registers</usage>
       </addressBlock>
-      <name>PWM</name>
       <interrupt>
         <name>PWM_CFG_INT</name>
         <value>57</value>
       </interrupt>
-      <description>PWM controller with 8 channels</description>
-      <baseAddress>0x44024000</baseAddress>
       <interrupt>
         <name>PWM_ABNOR_INT</name>
         <value>56</value>
@@ -4982,14 +4982,14 @@
       </registers>
     </peripheral>
     <peripheral>
+      <name>DMA</name>
+      <description>DMA controller with 4 channels</description>
+      <baseAddress>0x4A000000</baseAddress>
       <addressBlock>
         <offset>0x0000</offset>
         <size>0x1000</size>
         <usage>registers</usage>
       </addressBlock>
-      <name>DMA</name>
-      <description>DMA controller with 4 channels</description>
-      <baseAddress>0x4A000000</baseAddress>
       <interrupt>
         <name>DMA_INT</name>
         <value>59</value>
@@ -5156,6 +5156,10 @@
           </fields>
         </register>
         <register>
+          <dim>4</dim>
+          <dimIncrement>0x20</dimIncrement>
+          <dimIndex>0,1,2,3</dimIndex>
+          <dimName>DMAC_D_ADDR_0</dimName>
           <name>DMAC_D_ADDR_%s</name>
           <description>Channel %s [dim=4] destination address</description>
           <addressOffset>0x0104</addressOffset>
@@ -5168,12 +5172,12 @@
               <access>read-write</access>
             </field>
           </fields>
+        </register>
+        <register>
           <dim>4</dim>
           <dimIncrement>0x20</dimIncrement>
           <dimIndex>0,1,2,3</dimIndex>
-          <dimName>DMAC_D_ADDR_0</dimName>
-        </register>
-        <register>
+          <dimName>DMAC_LLI_0</dimName>
           <name>DMAC_LLI_%s</name>
           <description>Channel %s [dim=4] linked list register</description>
           <addressOffset>0x0100</addressOffset>
@@ -5192,12 +5196,12 @@
               <access>read-write</access>
             </field>
           </fields>
+        </register>
+        <register>
           <dim>4</dim>
           <dimIncrement>0x20</dimIncrement>
           <dimIndex>0,1,2,3</dimIndex>
-          <dimName>DMAC_LLI_0</dimName>
-        </register>
-        <register>
+          <dimName>DMAC_S_ADDR_0</dimName>
           <name>DMAC_S_ADDR_%s</name>
           <description>Channel %s [dim=4] source address</description>
           <addressOffset>0x0110</addressOffset>
@@ -5210,12 +5214,12 @@
               <access>read-write</access>
             </field>
           </fields>
+        </register>
+        <register>
           <dim>4</dim>
           <dimIncrement>0x20</dimIncrement>
           <dimIndex>0,1,2,3</dimIndex>
-          <dimName>DMAC_S_ADDR_0</dimName>
-        </register>
-        <register>
+          <dimName>DMAC_CHN_CONTROL_0</dimName>
           <name>DMAC_CHN_CONTROL_%s</name>
           <description>Channel %s [dim=4] control register</description>
           <addressOffset>0x0114</addressOffset>
@@ -5365,12 +5369,12 @@
               <access>read-write</access>
             </field>
           </fields>
+        </register>
+        <register>
           <dim>4</dim>
           <dimIncrement>0x20</dimIncrement>
           <dimIndex>0,1,2,3</dimIndex>
-          <dimName>DMAC_CHN_CONTROL_0</dimName>
-        </register>
-        <register>
+          <dimName>DMAC_CHN_CONFIG_0</dimName>
           <name>DMAC_CHN_CONFIG_%s</name>
           <description>Channel %s [dim=4] configuration register</description>
           <addressOffset>0x0108</addressOffset>
@@ -5474,22 +5478,18 @@
               <access>read-write</access>
             </field>
           </fields>
-          <dim>4</dim>
-          <dimIncrement>0x20</dimIncrement>
-          <dimIndex>0,1,2,3</dimIndex>
-          <dimName>DMAC_CHN_CONFIG_0</dimName>
         </register>
       </registers>
     </peripheral>
     <peripheral>
+      <name>SFC_CFG</name>
+      <description>SPI Flash Controller configuration</description>
+      <baseAddress>0x48000000</baseAddress>
       <addressBlock>
         <offset>0x0000</offset>
         <size>0x2000</size>
         <usage>registers</usage>
       </addressBlock>
-      <name>SFC_CFG</name>
-      <description>SPI Flash Controller configuration</description>
-      <baseAddress>0x48000000</baseAddress>
       <interrupt>
         <name>SFC_INT</name>
         <value>58</value>
@@ -6196,14 +6196,14 @@
       </registers>
     </peripheral>
     <peripheral>
+      <name>SPI0</name>
+      <description>SPI0 master/slave controller (SSI v151)</description>
+      <baseAddress>0x44020000</baseAddress>
       <addressBlock>
         <offset>0x0000</offset>
         <size>0x0100</size>
         <usage>registers</usage>
       </addressBlock>
-      <name>SPI0</name>
-      <description>SPI0 master/slave controller (SSI v151)</description>
-      <baseAddress>0x44020000</baseAddress>
       <interrupt>
         <name>SPI_INT</name>
         <value>43</value>
@@ -6711,26 +6711,28 @@
       </registers>
     </peripheral>
     <peripheral derivedFrom="SPI0">
+      <name>SPI1</name>
+      <description>SPI1/QSPI controller (SSI v151)</description>
+      <baseAddress>0x44021000</baseAddress>
       <addressBlock>
         <offset>0x0000</offset>
         <size>0x0100</size>
         <usage>registers</usage>
       </addressBlock>
-      <name>SPI1</name>
-      <description>SPI1/QSPI controller (SSI v151)</description>
-      <baseAddress>0x44021000</baseAddress>
       <interrupt>
         <name>QSPI_INT</name>
         <value>52</value>
       </interrupt>
     </peripheral>
     <peripheral>
+      <name>I2S</name>
+      <description>I2S/SIO synchronous audio interface (v151)</description>
+      <baseAddress>0x44025000</baseAddress>
       <addressBlock>
         <offset>0x0000</offset>
         <size>0x0100</size>
         <usage>registers</usage>
       </addressBlock>
-      <name>I2S</name>
       <interrupt>
         <name>I2S_RX_INT</name>
         <value>62</value>
@@ -6739,8 +6741,6 @@
         <name>I2S_TX_INT</name>
         <value>61</value>
       </interrupt>
-      <description>I2S/SIO synchronous audio interface (v151)</description>
-      <baseAddress>0x44025000</baseAddress>
       <interrupt>
         <name>I2S_INT</name>
         <value>51</value>
@@ -7203,14 +7203,14 @@
       </registers>
     </peripheral>
     <peripheral>
+      <name>LSADC</name>
+      <description>Low-speed ADC controller (12-bit SAR, 6 channels, v154)</description>
+      <baseAddress>0x4400C000</baseAddress>
       <addressBlock>
         <offset>0x0000</offset>
         <size>0x1000</size>
         <usage>registers</usage>
       </addressBlock>
-      <name>LSADC</name>
-      <description>Low-speed ADC controller (12-bit SAR, 6 channels, v154)</description>
-      <baseAddress>0x4400C000</baseAddress>
       <interrupt>
         <name>LSADC_INTR</name>
         <value>72</value>
@@ -7437,14 +7437,14 @@
       </registers>
     </peripheral>
     <peripheral>
+      <name>TSENSOR</name>
+      <description>Temperature sensor controller (v151)</description>
+      <baseAddress>0x4400E000</baseAddress>
       <addressBlock>
         <offset>0x0000</offset>
         <size>0x1000</size>
         <usage>registers</usage>
       </addressBlock>
-      <name>TSENSOR</name>
-      <description>Temperature sensor controller (v151)</description>
-      <baseAddress>0x4400E000</baseAddress>
       <interrupt>
         <name>TSENSOR_INT</name>
         <value>48</value>
@@ -7763,18 +7763,18 @@
       </registers>
     </peripheral>
     <peripheral>
+      <name>TIMER</name>
+      <description>Timer module with 3 independent 32-bit timers (v150)</description>
+      <baseAddress>0x44002000</baseAddress>
       <addressBlock>
         <offset>0x0000</offset>
         <size>0x1000</size>
         <usage>registers</usage>
       </addressBlock>
-      <name>TIMER</name>
       <interrupt>
         <name>TIMER_ABNOR_INT</name>
         <value>60</value>
       </interrupt>
-      <description>Timer module with 3 independent 32-bit timers (v150)</description>
-      <baseAddress>0x44002000</baseAddress>
       <registers>
         <register>
           <name>ABNOR_INTR_RAW</name>
@@ -7861,6 +7861,10 @@
           </fields>
         </register>
         <register>
+          <dim>3</dim>
+          <dimIncrement>0x100</dimIncrement>
+          <dimIndex>0,1,2</dimIndex>
+          <dimName>TIMER0_LOAD_COUNT</dimName>
           <name>TIMER%s_LOAD_COUNT</name>
           <description>Timer %s [dim=3] load count</description>
           <addressOffset>0x100</addressOffset>
@@ -7873,12 +7877,12 @@
               <access>read-write</access>
             </field>
           </fields>
+        </register>
+        <register>
           <dim>3</dim>
           <dimIncrement>0x100</dimIncrement>
           <dimIndex>0,1,2</dimIndex>
-          <dimName>TIMER0_LOAD_COUNT</dimName>
-        </register>
-        <register>
+          <dimName>TIMER0_CURRENT_VALUE</dimName>
           <name>TIMER%s_CURRENT_VALUE</name>
           <description>Timer %s [dim=3] current value</description>
           <addressOffset>0x108</addressOffset>
@@ -7891,12 +7895,12 @@
               <access>read-only</access>
             </field>
           </fields>
+        </register>
+        <register>
           <dim>3</dim>
           <dimIncrement>0x100</dimIncrement>
           <dimIndex>0,1,2</dimIndex>
-          <dimName>TIMER0_CURRENT_VALUE</dimName>
-        </register>
-        <register>
+          <dimName>TIMER0_CONTROL</dimName>
           <name>TIMER%s_CONTROL</name>
           <description>Timer %s [dim=3] control register</description>
           <addressOffset>0x110</addressOffset>
@@ -7944,12 +7948,12 @@
               <access>write-only</access>
             </field>
           </fields>
+        </register>
+        <register>
           <dim>3</dim>
           <dimIncrement>0x100</dimIncrement>
           <dimIndex>0,1,2</dimIndex>
-          <dimName>TIMER0_CONTROL</dimName>
-        </register>
-        <register>
+          <dimName>TIMER0_EOI</dimName>
           <name>TIMER%s_EOI</name>
           <description>Timer %s [dim=3] end-of-interrupt</description>
           <addressOffset>0x114</addressOffset>
@@ -7962,12 +7966,12 @@
               <access>read-only</access>
             </field>
           </fields>
+        </register>
+        <register>
           <dim>3</dim>
           <dimIncrement>0x100</dimIncrement>
           <dimIndex>0,1,2</dimIndex>
-          <dimName>TIMER0_EOI</dimName>
-        </register>
-        <register>
+          <dimName>TIMER0_RAW_INTR</dimName>
           <name>TIMER%s_RAW_INTR</name>
           <description>Timer %s [dim=3] raw interrupt status</description>
           <addressOffset>0x118</addressOffset>
@@ -7980,22 +7984,18 @@
               <access>read-only</access>
             </field>
           </fields>
-          <dim>3</dim>
-          <dimIncrement>0x100</dimIncrement>
-          <dimIndex>0,1,2</dimIndex>
-          <dimName>TIMER0_RAW_INTR</dimName>
         </register>
       </registers>
     </peripheral>
     <peripheral>
+      <name>WDT</name>
+      <description>Watchdog timer (v151)</description>
+      <baseAddress>0x40006000</baseAddress>
       <addressBlock>
         <offset>0x0000</offset>
         <size>0x1000</size>
         <usage>registers</usage>
       </addressBlock>
-      <name>WDT</name>
-      <description>Watchdog timer (v151)</description>
-      <baseAddress>0x40006000</baseAddress>
       <registers>
         <register>
           <name>WDT_LOCK</name>
@@ -8196,14 +8196,14 @@
       </registers>
     </peripheral>
     <peripheral>
+      <name>RTC</name>
+      <description>Real-time clock (48-bit free-running counter, v100)</description>
+      <baseAddress>0x57024000</baseAddress>
       <addressBlock>
         <offset>0x0000</offset>
         <size>0x0100</size>
         <usage>registers</usage>
       </addressBlock>
-      <name>RTC</name>
-      <description>Real-time clock (48-bit free-running counter, v100)</description>
-      <baseAddress>0x57024000</baseAddress>
       <interrupt>
         <name>RTC_IRQ</name>
         <value>29</value>
@@ -8294,14 +8294,14 @@
       </registers>
     </peripheral>
     <peripheral>
+      <name>EFUSE</name>
+      <description>eFuse controller (OTP, v151)</description>
+      <baseAddress>0x44008000</baseAddress>
       <addressBlock>
         <offset>0x0000</offset>
         <size>0x4000</size>
         <usage>registers</usage>
       </addressBlock>
-      <name>EFUSE</name>
-      <description>eFuse controller (OTP, v151)</description>
-      <baseAddress>0x44008000</baseAddress>
       <registers>
         <register>
           <name>EFUSE_CTL_DATA</name>
@@ -8386,14 +8386,14 @@
       </registers>
     </peripheral>
     <peripheral>
+      <name>SYS_CTL0</name>
+      <description>System Control 0 - reset status, clock control, PLL config</description>
+      <baseAddress>0x40000000</baseAddress>
       <addressBlock>
         <offset>0x0000</offset>
         <size>0x4000</size>
         <usage>registers</usage>
       </addressBlock>
-      <name>SYS_CTL0</name>
-      <description>System Control 0 - reset status, clock control, PLL config</description>
-      <baseAddress>0x40000000</baseAddress>
       <registers>
         <register>
           <name>RESET_COUNT</name>
@@ -8492,12 +8492,14 @@
       </registers>
     </peripheral>
     <peripheral>
+      <name>GLB_CTL_M</name>
+      <description>Main core global control - BCPU/MCPU reset status, chip reset, AON CRG</description>
+      <baseAddress>0x40002000</baseAddress>
       <addressBlock>
         <offset>0x0000</offset>
         <size>0x0200</size>
         <usage>registers</usage>
       </addressBlock>
-      <name>GLB_CTL_M</name>
       <interrupt>
         <name>TCM_MONITOR_INT</name>
         <value>71</value>
@@ -8518,8 +8520,6 @@
         <name>PMU_CMU_ERR_INT</name>
         <value>49</value>
       </interrupt>
-      <description>Main core global control - BCPU/MCPU reset status, chip reset, AON CRG</description>
-      <baseAddress>0x40002000</baseAddress>
       <registers>
         <register>
           <name>BCPU_RESET_STS</name>
@@ -8608,12 +8608,14 @@
       </registers>
     </peripheral>
     <peripheral>
+      <name>SPACC</name>
+      <description>Security accelerator - AES/SM4/LEA/TDES symmetric crypto, HASH/HMAC</description>
+      <baseAddress>0x44100000</baseAddress>
       <addressBlock>
         <offset>0x0000</offset>
         <size>0x10000</size>
         <usage>registers</usage>
       </addressBlock>
-      <name>SPACC</name>
       <interrupt>
         <name>RKP_REE_INT</name>
         <value>65</value>
@@ -8622,8 +8624,6 @@
         <name>PKE_REE_INT</name>
         <value>63</value>
       </interrupt>
-      <description>Security accelerator - AES/SM4/LEA/TDES symmetric crypto, HASH/HMAC</description>
-      <baseAddress>0x44100000</baseAddress>
       <interrupt>
         <name>SPACC_REE_INT</name>
         <value>64</value>
@@ -9032,14 +9032,14 @@
       </registers>
     </peripheral>
     <peripheral>
+      <name>PKE</name>
+      <description>Public Key Engine - modular arithmetic accelerator</description>
+      <baseAddress>0x44110000</baseAddress>
       <addressBlock>
         <offset>0x0000</offset>
         <size>0x2000</size>
         <usage>registers</usage>
       </addressBlock>
-      <name>PKE</name>
-      <description>Public Key Engine - modular arithmetic accelerator</description>
-      <baseAddress>0x44110000</baseAddress>
       <interrupt>
         <name>PKE_REE_INT</name>
         <value>63</value>
@@ -9407,14 +9407,14 @@
       </registers>
     </peripheral>
     <peripheral>
+      <name>KM</name>
+      <description>Key Management - KLAD key derivation, keyslot locking, RKP root key protection</description>
+      <baseAddress>0x44112000</baseAddress>
       <addressBlock>
         <offset>0x0000</offset>
         <size>0x2000</size>
         <usage>registers</usage>
       </addressBlock>
-      <name>KM</name>
-      <description>Key Management - KLAD key derivation, keyslot locking, RKP root key protection</description>
-      <baseAddress>0x44112000</baseAddress>
       <interrupt>
         <name>KLAD_REE_INT</name>
         <value>66</value>
@@ -9763,14 +9763,14 @@
       </registers>
     </peripheral>
     <peripheral>
+      <name>TRNG</name>
+      <description>True Random Number Generator</description>
+      <baseAddress>0x44114000</baseAddress>
       <addressBlock>
         <offset>0x0000</offset>
         <size>0x1000</size>
         <usage>registers</usage>
       </addressBlock>
-      <name>TRNG</name>
-      <description>True Random Number Generator</description>
-      <baseAddress>0x44114000</baseAddress>
       <registers>
         <register>
           <name>TRNG_FIFO_DATA</name>
@@ -9851,14 +9851,14 @@
       </registers>
     </peripheral>
     <peripheral>
+      <name>TCXO</name>
+      <description>TCXO 64-bit free-running counter (v150)</description>
+      <baseAddress>0x440004C0</baseAddress>
       <addressBlock>
         <offset>0x0000</offset>
         <size>0x0020</size>
         <usage>registers</usage>
       </addressBlock>
-      <name>TCXO</name>
-      <description>TCXO 64-bit free-running counter (v150)</description>
-      <baseAddress>0x440004C0</baseAddress>
       <registers>
         <register>
           <name>TCXO_STATUS</name>
@@ -9951,15 +9951,15 @@
       </registers>
     </peripheral>
     <peripheral>
+      <name>CLDO_CRG</name>
+      <description>CLDO Clock and Reset Generator - clock enables, dividers, clock selects, soft
+        resets</description>
+      <baseAddress>0x44001100</baseAddress>
       <addressBlock>
         <offset>0x0000</offset>
         <size>0x0100</size>
         <usage>registers</usage>
       </addressBlock>
-      <name>CLDO_CRG</name>
-      <description>CLDO Clock and Reset Generator - clock enables, dividers, clock selects, soft
-        resets</description>
-      <baseAddress>0x44001100</baseAddress>
       <registers>
         <register>
           <name>CKEN_CTL0</name>
@@ -10306,37 +10306,37 @@
       </registers>
     </peripheral>
     <peripheral derivedFrom="DMA">
-      <addressBlock>
-        <offset>0x0000</offset>
-        <size>0x1000</size>
-        <usage>registers</usage>
-      </addressBlock>
       <name>SDMA</name>
       <description>Secure DMA controller (4 channels, same layout as MDMA v151). Channels logically
         mapped as 8-11.</description>
       <baseAddress>0x520A0000</baseAddress>
-    </peripheral>
-    <peripheral derivedFrom="GPIO0">
       <addressBlock>
         <offset>0x0000</offset>
         <size>0x1000</size>
         <usage>registers</usage>
       </addressBlock>
+    </peripheral>
+    <peripheral derivedFrom="GPIO0">
       <name>ULP_GPIO</name>
       <description>Ultra-low-power GPIO controller (8 pins, GPIO[107:114]). Same register layout as
         GPIO0.</description>
       <baseAddress>0x57030000</baseAddress>
+      <addressBlock>
+        <offset>0x0000</offset>
+        <size>0x1000</size>
+        <usage>registers</usage>
+      </addressBlock>
     </peripheral>
     <peripheral>
+      <name>RF_WB_CTL</name>
+      <description>SYS_CTL2 sub-block: RF Wideband Control Register Block - WL/BT RF analog
+        interface control</description>
+      <baseAddress>0x44004000</baseAddress>
       <addressBlock>
         <offset>0x0000</offset>
         <size>0x0100</size>
         <usage>registers</usage>
       </addressBlock>
-      <name>RF_WB_CTL</name>
-      <description>SYS_CTL2 sub-block: RF Wideband Control Register Block - WL/BT RF analog
-        interface control</description>
-      <baseAddress>0x44004000</baseAddress>
       <registers>
         <register>
           <name>SYS_CTL_ID</name>
@@ -10467,15 +10467,15 @@
       </registers>
     </peripheral>
     <peripheral>
+      <name>SHARE_MEM_CTL</name>
+      <description>SYS_CTL2 sub-block: Shared Memory Control - RAM config, RX/TX DMA descriptor
+        rings for WiFi PHY↔Packet buffer</description>
+      <baseAddress>0x44006C00</baseAddress>
       <addressBlock>
         <offset>0x0000</offset>
         <size>0x0100</size>
         <usage>registers</usage>
       </addressBlock>
-      <name>SHARE_MEM_CTL</name>
-      <description>SYS_CTL2 sub-block: Shared Memory Control - RAM config, RX/TX DMA descriptor
-        rings for WiFi PHY↔Packet buffer</description>
-      <baseAddress>0x44006C00</baseAddress>
       <registers>
         <register>
           <name>CFG_RAM_CKEN</name>
@@ -10588,15 +10588,15 @@
       </registers>
     </peripheral>
     <peripheral>
+      <name>FAMA_REMAP</name>
+      <description>SYS_CTL2 sub-block: Flash Address Map Remap - up to 12 regions for boot-time
+        address redirection</description>
+      <baseAddress>0x44007800</baseAddress>
       <addressBlock>
         <offset>0x0000</offset>
         <size>0x0100</size>
         <usage>registers</usage>
       </addressBlock>
-      <name>FAMA_REMAP</name>
-      <description>SYS_CTL2 sub-block: Flash Address Map Remap - up to 12 regions for boot-time
-        address redirection</description>
-      <baseAddress>0x44007800</baseAddress>
       <registers>
         <register>
           <name>REMAP_SRC_BASE</name>
