@@ -1360,5 +1360,91 @@
       </registers>
     </peripheral>
 
+    <!-- ============================================================ -->
+    <!-- TCXO: Temperature-Compensated Crystal Oscillator Counter      -->
+    <!-- Base: 0x440004C0 - v150                                       -->
+    <!-- ============================================================ -->
+    <peripheral>
+      <name>TCXO</name>
+      <description>TCXO 64-bit free-running counter (v150)</description>
+      <baseAddress>0x440004C0</baseAddress>
+      <registers>
+        <register><name>TCXO_STATUS</name><description>TCXO status and control register</description><addressOffset>0x00</addressOffset><resetValue>0x00000000</resetValue><fields>
+          <field><name>valid</name><description>TCXO count value valid flag</description><bitRange>[4:4]</bitRange><access>read-only</access></field>
+          <field><name>enable</name><description>TCXO count enable: 1=enable counting</description><bitRange>[2:2]</bitRange><access>read-write</access></field>
+          <field><name>clear</name><description>TCXO count clear: 1=clear counter</description><bitRange>[1:1]</bitRange><access>read-write</access></field>
+          <field><name>refresh</name><description>TCXO count refresh: 1=trigger count latch</description><bitRange>[0:0]</bitRange><access>read-write</access></field>
+        </fields></register>
+        <register><name>TCXO_COUNT0</name><description>TCXO count bits [15:0]</description><addressOffset>0x04</addressOffset><resetValue>0x00000000</resetValue><fields><field><name>count0</name><description>Counter value bits [15:0]</description><bitRange>[15:0]</bitRange><access>read-only</access></field></fields></register>
+        <register><name>TCXO_COUNT1</name><description>TCXO count bits [31:16]</description><addressOffset>0x08</addressOffset><resetValue>0x00000000</resetValue><fields><field><name>count1</name><description>Counter value bits [31:16]</description><bitRange>[15:0]</bitRange><access>read-only</access></field></fields></register>
+        <register><name>TCXO_COUNT2</name><description>TCXO count bits [47:32]</description><addressOffset>0x0C</addressOffset><resetValue>0x00000000</resetValue><fields><field><name>count2</name><description>Counter value bits [47:32]</description><bitRange>[15:0]</bitRange><access>read-only</access></field></fields></register>
+        <register><name>TCXO_COUNT3</name><description>TCXO count bits [63:48]</description><addressOffset>0x10</addressOffset><resetValue>0x00000000</resetValue><fields><field><name>count3</name><description>Counter value bits [63:48]</description><bitRange>[15:0]</bitRange><access>read-only</access></field></fields></register>
+      </registers>
+    </peripheral>
+
+    <!-- ============================================================ -->
+    <!-- CLDO_CRG: Clock &amp; Reset Generator (Base: 0x44001100)       -->
+    <!-- ============================================================ -->
+    <peripheral>
+      <name>CLDO_CRG</name>
+      <description>CLDO Clock and Reset Generator - clock enables, dividers, clock selects, soft resets</description>
+      <baseAddress>0x44001100</baseAddress>
+      <registers>
+        <register><name>CKEN_CTL0</name><description>Clock enable control register 0</description><addressOffset>0x00</addressOffset><resetValue>0x00000000</resetValue><fields>
+          <field><name>pwm_cken</name><description>PWM clock gates: bits [10:2], 9 channels</description><bitRange>[10:2]</bitRange><access>read-write</access></field>
+          <field><name>gen_cken</name><description>General clock gates: bits [27:18], 10 channels</description><bitRange>[27:18]</bitRange><access>read-write</access></field>
+        </fields></register>
+        <register><name>CKEN_CTL1</name><description>Clock enable control register 1</description><addressOffset>0x04</addressOffset><resetValue>0x00000000</resetValue><fields>
+          <field><name>bt_cken</name><description>BT clock gates: bits [12:8], 5 channels</description><bitRange>[12:8]</bitRange><access>read-write</access></field>
+          <field><name>wifi_cken</name><description>WIFI clock gates: bits [14:13], 2 channels</description><bitRange>[14:13]</bitRange><access>read-write</access></field>
+          <field><name>uart_cken</name><description>UART clock gates: bits [20:18], 3 channels</description><bitRange>[20:18]</bitRange><access>read-write</access></field>
+          <field><name>spi_cken</name><description>SPI clock gate at bit 25</description><bitRange>[25:25]</bitRange><access>read-write</access></field>
+        </fields></register>
+        <register><name>DIV_CTL0</name><description>Divider control register 0</description><addressOffset>0x08</addressOffset><resetValue>0x00000000</resetValue><fields><field><name>div_ctl0</name><description>Clock divider control 0</description><bitRange>[31:0]</bitRange><access>read-write</access></field></fields></register>
+        <register><name>DIV_CTL3</name><description>Divider control 3 - PWM0, PWM1</description><addressOffset>0x14</addressOffset><resetValue>0x00000000</resetValue><fields><field><name>div_pwm01</name><description>PWM0/PWM1 clock divider</description><bitRange>[31:0]</bitRange><access>read-write</access></field></fields></register>
+        <register><name>DIV_CTL4</name><description>Divider control 4 - PWM2, PWM3, PWM4</description><addressOffset>0x18</addressOffset><resetValue>0x00000000</resetValue><fields><field><name>div_pwm234</name><description>PWM2/PWM3/PWM4 clock divider</description><bitRange>[31:0]</bitRange><access>read-write</access></field></fields></register>
+        <register><name>DIV_CTL5</name><description>Divider control 5 - PWM5, PWM6, PWM7</description><addressOffset>0x1C</addressOffset><resetValue>0x00000000</resetValue><fields><field><name>div_pwm567</name><description>PWM5/PWM6/PWM7 clock divider</description><bitRange>[31:0]</bitRange><access>read-write</access></field></fields></register>
+        <register><name>DIV_CTL7</name><description>Divider control 7 - tsensor, bus</description><addressOffset>0x24</addressOffset><resetValue>0x00000000</resetValue><fields><field><name>div_tsensor_bus</name><description>TSENSOR and bus clock dividers</description><bitRange>[31:0]</bitRange><access>read-write</access></field></fields></register>
+        <register><name>DIV_CTL9</name><description>Divider control 9 - TRNG</description><addressOffset>0x2C</addressOffset><resetValue>0x00000000</resetValue><fields><field><name>div_trng</name><description>TRNG clock divider</description><bitRange>[31:0]</bitRange><access>read-write</access></field></fields></register>
+        <register><name>DIV_CTL10</name><description>Divider control 10 - TCXO 120M, MAC main</description><addressOffset>0x30</addressOffset><resetValue>0x00000000</resetValue><fields>
+          <field><name>tcxo_120m_div1_num</name><description>TCXO 120M divider 1 value (3-bit)</description><bitRange>[2:0]</bitRange><access>read-write</access></field>
+          <field><name>tcxo_120m_load_div_en</name><description>TCXO 120M load divider enable</description><bitRange>[3:3]</bitRange><access>read-write</access></field>
+          <field><name>tcxo_120m_div_en</name><description>TCXO 120M divider enable</description><bitRange>[4:4]</bitRange><access>read-write</access></field>
+          <field><name>mac_main_div_num</name><description>MAC main divider value (6-bit)</description><bitRange>[10:5]</bitRange><access>read-write</access></field>
+          <field><name>wtop_div_en</name><description>WTO divider enable</description><bitRange>[11:11]</bitRange><access>read-write</access></field>
+          <field><name>tcxo_120m_div2_num</name><description>TCXO 120M divider 2 value (3-bit)</description><bitRange>[14:12]</bitRange><access>read-write</access></field>
+        </fields></register>
+        <register><name>CLK_SEL</name><description>Clock source select register</description><addressOffset>0x34</addressOffset><resetValue>0x00000000</resetValue><fields>
+          <field><name>rf_ctl_clk_sel</name><description>RF_CTL clock: 0=TCXO; 1=PLL</description><bitRange>[0:0]</bitRange><access>read-write</access></field>
+          <field><name>uart0_clk_sel</name><description>UART0 clock: 0=TCXO; 1=PLL</description><bitRange>[1:1]</bitRange><access>read-write</access></field>
+          <field><name>uart1_clk_sel</name><description>UART1 clock select</description><bitRange>[2:2]</bitRange><access>read-write</access></field>
+          <field><name>uart2_clk_sel</name><description>UART2 clock select</description><bitRange>[3:3]</bitRange><access>read-write</access></field>
+          <field><name>spi_clk_sel</name><description>SPI clock select</description><bitRange>[6:6]</bitRange><access>read-write</access></field>
+          <field><name>pwm_clk_sel</name><description>PWM clock: 0=TCXO; 1=PLL</description><bitRange>[7:7]</bitRange><access>read-write</access></field>
+          <field><name>bus_clk_sel</name><description>Bus clock select</description><bitRange>[17:17]</bitRange><access>read-write</access></field>
+          <field><name>flash_clk_sel</name><description>Flash clock: 0=TCXO; 1=PLL</description><bitRange>[18:18]</bitRange><access>read-write</access></field>
+          <field><name>wifi_phy_clk_sel</name><description>WIFI_PHY clock select</description><bitRange>[19:19]</bitRange><access>read-write</access></field>
+          <field><name>wifi_mac_clk_sel</name><description>WIFI_MAC clock select</description><bitRange>[20:20]</bitRange><access>read-write</access></field>
+        </fields></register>
+        <register><name>RST_SOFT_CFG0</name><description>Soft reset configuration register 0</description><addressOffset>0x38</addressOffset><resetValue>0x00000000</resetValue><fields>
+          <field><name>cfg0_b3_b15</name><description>13-bit soft reset control (bits [15:3])</description><bitRange>[15:3]</bitRange><access>read-write</access></field>
+          <field><name>cfg0_b17_b24</name><description>8-bit soft reset control (bits [24:17])</description><bitRange>[24:17]</bitRange><access>read-write</access></field>
+          <field><name>cfg0_b27_b28</name><description>2-bit soft reset control (bits [28:27])</description><bitRange>[28:27]</bitRange><access>read-write</access></field>
+          <field><name>cfg0_b30</name><description>Soft reset bit 30</description><bitRange>[30:30]</bitRange><access>read-write</access></field>
+        </fields></register>
+        <register><name>RST_SOFT_CFG1</name><description>Soft reset configuration register 1 (active low)</description><addressOffset>0x3C</addressOffset><resetValue>0xFFFFFFFF</resetValue><fields>
+          <field><name>soft_rst_gpio_n</name><description>GPIO module reset: 0=reset; 1=released</description><bitRange>[0:0]</bitRange><access>read-write</access></field>
+          <field><name>soft_rst_tglp_n</name><description>TGLP (BT) reset: 0=reset; 1=released</description><bitRange>[1:1]</bitRange><access>read-write</access></field>
+          <field><name>soft_rst_bsub_n</name><description>BSUB (BT) reset: 0=reset; 1=released</description><bitRange>[2:2]</bitRange><access>read-write</access></field>
+          <field><name>soft_rst_crg_bsub_n</name><description>CRG BSUB (BT) reset: 0=reset; 1=released</description><bitRange>[3:3]</bitRange><access>read-write</access></field>
+          <field><name>soft_rst_wifi_n</name><description>WIFI subsystem reset: 0=reset; 1=released</description><bitRange>[4:4]</bitRange><access>read-write</access></field>
+          <field><name>soft_rst_lsadc_n</name><description>LSADC core reset: 0=reset; 1=released</description><bitRange>[5:5]</bitRange><access>read-write</access></field>
+          <field><name>soft_rst_tcxo_cnt_n</name><description>TCXO counter reset: 0=reset; 1=released</description><bitRange>[6:6]</bitRange><access>read-write</access></field>
+          <field><name>soft_rst_lsadc_bus_n</name><description>LSADC bus interface reset: 0=reset; 1=released</description><bitRange>[7:7]</bitRange><access>read-write</access></field>
+          <field><name>soft_rst_wcpu_mem_ctl_n</name><description>WCPU memory controller reset: 0=reset; 1=released</description><bitRange>[8:8]</bitRange><access>read-write</access></field>
+        </fields></register>
+      </registers>
+    </peripheral>
+
   </peripherals>
 </device>
