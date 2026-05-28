@@ -1464,5 +1464,81 @@
       <baseAddress>0x57030000</baseAddress>
     </peripheral>
 
+    <!-- ============================================================ -->
+    <!-- SYS_CTL2 sub-blocks: RF_WB_CTL, SHARE_MEM_CTL, FAMA_REMAP     -->
+    <!-- All in range 0x44004000 - 0x44007FFF                           -->
+    <!-- No bit-level definitions exist in SDK - registers listed as   -->
+    <!-- named 32-bit registers for address discovery.                  -->
+    <!-- ============================================================ -->
+
+    <!-- RF_WB_CTL: RF Wideband Control (Base: 0x44004000) -->
+    <peripheral>
+      <name>RF_WB_CTL</name>
+      <description>SYS_CTL2 sub-block: RF Wideband Control Register Block - WL/BT RF analog interface control</description>
+      <baseAddress>0x44004000</baseAddress>
+      <registers>
+        <register><name>SYS_CTL_ID</name><description>System control ID register</description><addressOffset>0x000</addressOffset><resetValue>0x00000000</resetValue></register>
+        <register><name>RF_WL_REG_CLK_CTL</name><description>RF WL register clock control</description><addressOffset>0x010</addressOffset><resetValue>0x00000000</resetValue></register>
+        <register><name>RF_WL_REG_SOFT_RSTN</name><description>RF WL register soft reset</description><addressOffset>0x014</addressOffset><resetValue>0x00000000</resetValue></register>
+        <register><name>RF_WL_REG_CMD_SOFT_RSTN</name><description>RF WL command soft reset</description><addressOffset>0x018</addressOffset><resetValue>0x00000000</resetValue></register>
+        <register><name>RF_WL_REG_CMD_FIFO_STS</name><description>RF WL command FIFO status</description><addressOffset>0x01C</addressOffset><resetValue>0x00000000</resetValue></register>
+        <register><name>RF_WL_CBB_DIS</name><description>RF WL CBB disable</description><addressOffset>0x020</addressOffset><resetValue>0x00000000</resetValue></register>
+        <register><name>RF_BT_CBB_DIS</name><description>RF BT CBB disable</description><addressOffset>0x024</addressOffset><resetValue>0x00000000</resetValue></register>
+        <register><name>ABB_ADC_CTRL</name><description>ABB ADC control</description><addressOffset>0x030</addressOffset><resetValue>0x00000000</resetValue></register>
+        <register><name>ABB_DAC_CTRL</name><description>ABB DAC control</description><addressOffset>0x034</addressOffset><resetValue>0x00000000</resetValue></register>
+        <register><name>ABB_EN_CTRL</name><description>ABB enable control</description><addressOffset>0x038</addressOffset><resetValue>0x00000000</resetValue></register>
+        <register><name>CFG_WL_ADC_MUX</name><description>WL ADC mux configuration</description><addressOffset>0x03C</addressOffset><resetValue>0x00000000</resetValue></register>
+        <register><name>CFG_RF_MAN_EN_CTRL</name><description>RF manual enable control</description><addressOffset>0x040</addressOffset><resetValue>0x00000000</resetValue></register>
+        <register><name>CFG_TRXEN_CTRL</name><description>TRX enable control</description><addressOffset>0x044</addressOffset><resetValue>0x00000000</resetValue></register>
+        <register><name>CFG_DCOC_IQ_CTRL</name><description>DCOC IQ control</description><addressOffset>0x048</addressOffset><resetValue>0x00000000</resetValue></register>
+        <register><name>CFG_PA_IDX_CTRL</name><description>PA index control</description><addressOffset>0x04C</addressOffset><resetValue>0x00000000</resetValue></register>
+        <register><name>CFG_LPF_CTRL</name><description>LPF control</description><addressOffset>0x050</addressOffset><resetValue>0x00000000</resetValue></register>
+        <register><name>CFG_RADAR_CTRL</name><description>Radar control</description><addressOffset>0x054</addressOffset><resetValue>0x00000000</resetValue></register>
+        <register><name>CFG_PPA_CODE</name><description>PPA code register</description><addressOffset>0x058</addressOffset><resetValue>0x00000000</resetValue></register>
+        <register><name>CFG_TEMP_LOCK_CTRL</name><description>Temperature lock control</description><addressOffset>0x05C</addressOffset><resetValue>0x00000000</resetValue></register>
+        <register><name>CFG_TEMP_BANK_SEL_CTRL</name><description>Temperature bank select control</description><addressOffset>0x060</addressOffset><resetValue>0x00000000</resetValue></register>
+        <register><name>CFG_RF_DIAG_MUX</name><description>RF diagnostic mux</description><addressOffset>0x064</addressOffset><resetValue>0x00000000</resetValue></register>
+      </registers>
+    </peripheral>
+
+    <!-- SHARE_MEM_CTL: Shared Memory Control (Base: 0x44006C00) -->
+    <peripheral>
+      <name>SHARE_MEM_CTL</name>
+      <description>SYS_CTL2 sub-block: Shared Memory Control - RAM config, RX/TX DMA descriptor rings for WiFi PHY↔Packet buffer</description>
+      <baseAddress>0x44006C00</baseAddress>
+      <registers>
+        <register><name>CFG_RAM_CKEN</name><description>RAM clock enable</description><addressOffset>0x004</addressOffset><resetValue>0x00000000</resetValue></register>
+        <register><name>CFG_RAM_SEL</name><description>Share RAM control and RAM select</description><addressOffset>0x008</addressOffset><resetValue>0x00000000</resetValue></register>
+        <register><name>RAM_SW_CONFLICT_CLR</name><description>RAM software conflict clear</description><addressOffset>0x00C</addressOffset><resetValue>0x00000000</resetValue></register>
+        <register><name>RAM_SW_CONFLICT_ST</name><description>RAM software conflict status</description><addressOffset>0x010</addressOffset><resetValue>0x00000000</resetValue></register>
+        <register><name>RAMX_SW_CONFLICT_BASE_ADDR</name><description>RAMX software conflict base address</description><addressOffset>0x014</addressOffset><resetValue>0x00000000</resetValue></register>
+        <register><name>CFG_FREQ_BUSDMAC</name><description>Bus DMAC frequency configuration</description><addressOffset>0x050</addressOffset><resetValue>0x00000000</resetValue></register>
+        <register><name>CFG_RX_EN</name><description>RX enable</description><addressOffset>0x058</addressOffset><resetValue>0x00000000</resetValue></register>
+        <register><name>CFG_RX_START_ADDR</name><description>RX start address</description><addressOffset>0x05C</addressOffset><resetValue>0x00000000</resetValue></register>
+        <register><name>CFG_RX_END_ADDR</name><description>RX end address</description><addressOffset>0x060</addressOffset><resetValue>0x00000000</resetValue></register>
+        <register><name>CFG_RX_DONE_STS</name><description>RX done status</description><addressOffset>0x064</addressOffset><resetValue>0x00000000</resetValue></register>
+        <register><name>CFG_RX_DONE_ADDR</name><description>RX done address</description><addressOffset>0x068</addressOffset><resetValue>0x00000000</resetValue></register>
+        <register><name>CFG_WLPHY2PKT_RX_RAM_STS</name><description>WL PHY-to-packet RX RAM status</description><addressOffset>0x06C</addressOffset><resetValue>0x00000000</resetValue></register>
+        <register><name>CFG_TX_EN</name><description>TX enable</description><addressOffset>0x070</addressOffset><resetValue>0x00000000</resetValue></register>
+        <register><name>CFG_TX_START_ADDR</name><description>TX start address</description><addressOffset>0x074</addressOffset><resetValue>0x00000000</resetValue></register>
+        <register><name>CFG_TX_END_ADDR</name><description>TX end address</description><addressOffset>0x078</addressOffset><resetValue>0x00000000</resetValue></register>
+        <register><name>CFG_TX_DONE_STS</name><description>TX done status</description><addressOffset>0x07C</addressOffset><resetValue>0x00000000</resetValue></register>
+        <register><name>CFG_TX_DONE_ADDR</name><description>TX done address</description><addressOffset>0x080</addressOffset><resetValue>0x00000000</resetValue></register>
+        <register><name>CFG_WLPHY2PKT_TX_RAM_STS</name><description>WL PHY-to-packet TX RAM status</description><addressOffset>0x084</addressOffset><resetValue>0x00000000</resetValue></register>
+      </registers>
+    </peripheral>
+
+    <!-- FAMA_REMAP: Flash Address Remap (Base: 0x44007800) -->
+    <peripheral>
+      <name>FAMA_REMAP</name>
+      <description>SYS_CTL2 sub-block: Flash Address Map Remap - up to 12 regions for boot-time address redirection</description>
+      <baseAddress>0x44007800</baseAddress>
+      <registers>
+        <register><name>REMAP_SRC_BASE</name><description>Remap source base address (address >> 12). Up to 12 regions, offset 0x0 + 0x4*n</description><addressOffset>0x000</addressOffset><resetValue>0x00000000</resetValue></register>
+        <register><name>REMAP_LEN</name><description>Remap region length (end address >> 12). offset 0x20 + 0x4*n</description><addressOffset>0x020</addressOffset><resetValue>0x00000000</resetValue></register>
+        <register><name>REMAP_DST_BASE</name><description>Remap destination base offset (dest - src). offset 0x40 + 0x4*n</description><addressOffset>0x040</addressOffset><resetValue>0x00000000</resetValue></register>
+      </registers>
+    </peripheral>
+
   </peripherals>
 </device>
