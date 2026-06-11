@@ -1,7 +1,7 @@
 # ws63-svd
 
 HiSilicon **WS63**（RISC-V RV32IMFC_Zicsr，Wi-Fi 6 + BLE + SLE/星闪）的手写 CMSIS-SVD 描述，
-是 [`ws63-pac`](https://github.com/sanchuanhehe/ws63-pac)（经 svd2rust 生成）的上游真值。
+是 [`ws63-pac`](https://github.com/hispark-rs/ws63-pac)（经 svd2rust 生成）的上游真值。
 
 ## 内容
 
@@ -41,4 +41,4 @@ uv run validate.py        # 对照 CMSIS-SVD XSD
 
 ## 架构与评审
 
-见主仓库 <https://github.com/sanchuanhehe/ws63-rs/blob/main/docs/architecture/ws63-svd.md>。
+见主仓库 <https://github.com/hispark-rs/ws63-rs/blob/main/docs/architecture/ws63-svd.md>。
